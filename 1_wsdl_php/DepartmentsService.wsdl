@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="urn:Departments" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Departments" targetNamespace="urn:Departments">
+   <types>
+      <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:Departments">
+         <xsd:element name="getSuppliersID" type="xsd:string" />
+         <xsd:complexType name="return">
+            <xsd:complexContent>
+               <xsd:restriction base="soapenc:Array">
+                  <xsd:attribute wsdl:arrayType="Departments[]" ref="soapenc:arrayType" />
+               </xsd:restriction>
+            </xsd:complexContent>
+         </xsd:complexType>
+      </xsd:schema>
+   </types>
+   <message name="getDepartmentsByCountry">
+      <part name="SuppliersID" type="tns:getSuppliersID" />
+   </message>
+   <message name="getDepartmentsByCountryResponse">
+      <part name="SuppliersID" type="tns:getSuppliersID" />
+   </message>
+   <message name="getDepartmentsByRegion">
+      <part name="SuppliersID" type="tns:getSuppliersID" />
+   </message>
+   <message name="getDepartmentsByRegionResponse">
+      <part name="SuppliersID" type="tns:getSuppliersID" />
+   </message>
+   <portType name="DepartmentsPort">
+      <operation name="getEmployeeInfoById">
+         <input message="tns:getEmployeeInfoById" />
+         <output message="tns:getEmployeeInfoByIdResponse" />
+      </operation>
+      <operation name="getRegions">
+         <input message="tns:getRegions" />
+         <output message="tns:getRegionsResponse" />
+      </operation>
+      <operation name="getDepartmentsByCountry">
+         <input message="tns:getDepartmentsByCountry" />
+         <output message="tns:getDepartmentsByCountryResponse" />
+      </operation>
+      <operation name="getDepartmentsByRegion">
+         <input message="tns:getDepartmentsByRegion" />
+         <output message="tns:getDepartmentsByRegionResponse" />
+      </operation>
+   </portType>
+   <binding name="DepartmentsBinding" type="tns:DepartmentsPort">
+      <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+      <operation name="getDepartmentsByCountry">
+         <soap:operation soapAction="urn:DepartmentsAction" />
+         <input>
+            <soap:body use="encoded" namespace="urn:Departments" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+         </input>
+         <output>
+            <soap:body use="encoded" namespace="urn:Departments" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+         </output>
+      </operation>
+      <operation name="getDepartmentsByRegion">
+         <soap:operation soapAction="urn:DepartmentsAction" />
+         <input>
+            <soap:body use="encoded" namespace="urn:Departments" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+         </input>
+         <output>
+            <soap:body use="encoded" namespace="urn:Departments" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+         </output>
+      </operation>
+   </binding>
+   <service name="DepartmentsService">
+      <port name="DepartmentsPort" binding="tns:DepartmentsBinding">
+         <soap:address location="http://localhost:8888/wsdl/server.php" />
+      </port>
+   </service>
+</definitions>

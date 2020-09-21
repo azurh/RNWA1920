@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "aefe1a90-2c7f-44b5-afa9-a6ef89c71582",
+		"name": "REST with PHP",
+		"description": "Postman collection for testing the REST APIs written in PHP against the 'jobs' table in the HR database.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "READ All Jobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/jobs.php",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"jobs.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ Single Job",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/jobs.php?id=AC_ACCOUNT",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"jobs.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "AC_ACCOUNT"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Job",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job_id\": \"PHP_DEV\",\n    \"job_title\": \"PHP Backend Developer\",\n    \"min_salary\": 2000,\n    \"max_salary\": 8000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/jobs.php",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"jobs.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Job",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"job_id\": \"PHP_DEV\",\n    \"job_title\": \"Awesome PHP Backend Developer\",\n    \"min_salary\": 2000,\n    \"max_salary\": 8000\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/jobs.php",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"jobs.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Job",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"department_name\": \"FSRE Web Gurus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/jobs.php?id=PHP_DEV",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"jobs.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "PHP_DEV"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "80b46715-8b64-4a45-9ae2-67208525639a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "52853dee-62c4-4ab6-9b32-3dbcd7652499",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "0e551a2e-2d6a-4ec7-843c-bf94693e503e",
+			"key": "SERVER",
+			"value": "localhost:8888/rest/api"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

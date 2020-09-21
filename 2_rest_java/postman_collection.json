@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "df32ea87-133b-4e8e-b4d5-2d71e63cb7ef",
+		"name": "REST with SpringBoot",
+		"description": "Postman collection for testing the REST APIs written in Java SpringBoot against the 'departments' table in the HR database.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "READ All Departments",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/departments",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ Single Department",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/departments/10",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"departments",
+						"10"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Department",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"department_name\": \"FSRE Web Gurus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/departments",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE Department",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"department_name\": \"FSRE Web Gurus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/departments",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"departments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE Department",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"department_name\": \"FSRE Web Gurus\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{SERVER}}/departments/8",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"departments",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "16472ca7-58c8-4401-90cf-69223e27e9db",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "7105a107-45a5-472e-9fdc-837b2478d70e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "67eb9c7c-7273-4047-a2cf-dbdc65142e9b",
+			"key": "SERVER",
+			"value": "localhost:9999"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

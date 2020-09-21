@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://localhost:8080/WebServis1/Servis1?wsdl" uri="wsdl/localhost_8080/WebServis1/Servis1.wsdl"/>
+    <system systemId="http://localhost:8080/WebServis1/Servis1?xsd=1" uri="wsdl/localhost_8080/WebServis1/Servis1.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WebServis1/EmpServ?wsdl" uri="wsdl/localhost_8080/WebServis1/EmpServ.wsdl"/>
+    <system systemId="http://localhost:8080/WebServis1/EmpServ?xsd=1" uri="wsdl/localhost_8080/WebServis1/EmpServ.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WebServis1/EmployeeService?wsdl" uri="wsdl/localhost_8080/WebServis1/EmployeeService.wsdl"/>
+    <system systemId="http://localhost:8080/WebServis1/EmployeeService?xsd=1" uri="wsdl/localhost_8080/WebServis1/EmployeeService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/HRService/EmployeeService?wsdl" uri="wsdl/localhost_8080/HRService/EmployeeService.wsdl"/>
+    <system systemId="http://localhost:8080/HRService/EmployeeService?xsd=1" uri="wsdl/localhost_8080/HRService/EmployeeService.xsd_1.xsd"/>
+</catalog>
